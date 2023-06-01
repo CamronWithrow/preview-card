@@ -30,13 +30,13 @@ const carList = [
 
 export default function App() {
   return (
-    <main>
-      <h1>Preview Card Component</h1>
+    <main className="flex flex-col md:flex-row">
+      <h1 className="sr-only">Preview Card Component</h1>
       {carList.map((item) => {
         return (
           <section key={item.id}>
             <Image src={item.icon} alt="" />
-            <h2>{item.title}</h2>
+            <h2 className="font-heading uppercase">{item.title}</h2>
             <p>{item.description}</p>
             <button>Learn More</button>
           </section>
