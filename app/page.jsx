@@ -36,17 +36,22 @@ const carList = [
 
 export default function App() {
   return (
-    <main className="flex flex-col md:flex-row">
+    <main className="flex max-w-max flex-col overflow-hidden rounded-md md:flex-row">
       <h1 className="sr-only">Preview Card Component</h1>
       {carList.map((item) => {
         return (
-          <section key={item.id} className={item.bgAccent}>
+          <section
+            key={item.id}
+            className={`${item.bgAccent} mx-auto max-w-xs p-12`}
+          >
             <Image src={item.icon} alt="" />
-            <h2 className="font-heading text-2xl uppercase text-very-light-gray">
+            <h2 className="my-8 font-heading text-4xl uppercase text-very-light-gray">
               {item.title}
             </h2>
             <p>{item.description}</p>
-            <button className={`${item.textAccent} bg-very-light-gray`}>
+            <button
+              className={`${item.textAccent} mt-6 rounded-full bg-very-light-gray px-6 py-2`}
+            >
               Learn More
             </button>
           </section>

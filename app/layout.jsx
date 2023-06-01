@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${bigShoulders.variable} ${lexendDeca.variable}`}
     >
-      <body className="bg-very-light-gray font-body text-transparent-white">
+      <body className="flex h-full flex-col items-center justify-center bg-very-light-gray py-20 font-body text-transparent-white md:h-screen md:py-0">
         {children}
       </body>
     </html>
