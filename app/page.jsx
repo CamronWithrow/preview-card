@@ -1,12 +1,14 @@
 import Image from "next/image";
 
-import sedanIcon from "../public/icon-sedans.svg";
-import suvIcon from "../public/icon-suvs.svg";
-import luxuryIcon from "../public/icon-luxury.svg";
+import sedanIcon from "@/public/icon-sedans.svg";
+import suvIcon from "@/public/icon-suvs.svg";
+import luxuryIcon from "@/public/icon-luxury.svg";
 
 const carList = [
   {
     id: 0,
+    bgAccent: "bg-bright-orange",
+    textAccent: "text-bright-orange",
     icon: sedanIcon,
     title: "Sedans",
     description:
@@ -14,6 +16,8 @@ const carList = [
   },
   {
     id: 1,
+    bgAccent: "bg-dark-cyan",
+    textAccent: "text-dark-cyan",
     icon: suvIcon,
     title: "SUVs",
     description:
@@ -21,6 +25,8 @@ const carList = [
   },
   {
     id: 2,
+    bgAccent: "bg-very-dark-cyan",
+    textAccent: "text-very-dark-cyan",
     icon: luxuryIcon,
     title: "Luxury",
     description:
@@ -34,11 +40,15 @@ export default function App() {
       <h1 className="sr-only">Preview Card Component</h1>
       {carList.map((item) => {
         return (
-          <section key={item.id}>
+          <section key={item.id} className={item.bgAccent}>
             <Image src={item.icon} alt="" />
-            <h2 className="font-heading uppercase">{item.title}</h2>
+            <h2 className="font-heading text-2xl uppercase text-very-light-gray">
+              {item.title}
+            </h2>
             <p>{item.description}</p>
-            <button>Learn More</button>
+            <button className={`${item.textAccent} bg-very-light-gray`}>
+              Learn More
+            </button>
           </section>
         );
       })}
